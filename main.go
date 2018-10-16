@@ -1,7 +1,7 @@
 package main
 
 import (
-	"net/http"
+    "net/http"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -9,8 +9,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main(){
-	http.HandleFunc("/", handler)
-	if err := http.ListenAndServe("0.0.0.0:8000", nil); err != nil{
-		panic(err)
-	}
+    http.HandleFunc("/", handler)
+    if err := http.ListenAndServe("0.0.0.0:8000", nil); err != nil{
+        panic(err)
+    }
 }
