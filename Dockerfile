@@ -1,4 +1,5 @@
-FROM golang:latest as builder
+FROM golang:latest
+# as builder
 
 WORKDIR /app
 
@@ -7,8 +8,8 @@ COPY main.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o webserver
 
 
-FROM scratch
+#FROM scratch
 
-COPY --from=builder /app/webserver /webserver
+#COPY --from=builder /app/webserver /webserver
 
-CMD ["/webserver"]
+CMD ["/app/webserver"]
